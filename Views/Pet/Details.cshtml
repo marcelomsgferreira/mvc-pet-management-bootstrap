@@ -1,0 +1,93 @@
+﻿@model pet_register_table.Models.Pet
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="container mt-4">
+    <h4 class="mb-3">Pet Details</h4>
+    <hr />
+    <dl class="row">
+        <!-- Name -->
+        <dt class="col-sm-3 fw-bold">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <!-- Species -->
+        <dt class="col-sm-3 fw-bold">
+            @Html.DisplayNameFor(model => model.Species)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.Species)
+        </dd>
+
+        <!-- Breed -->
+        <dt class="col-sm-3 fw-bold">
+            @Html.DisplayNameFor(model => model.Breed)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.Breed)
+        </dd>
+
+        <!-- Date of Birth -->
+        <dt class="col-sm-3 fw-bold">
+            @Html.DisplayNameFor(model => model.DateOfBirth)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.DateOfBirth)
+        </dd>
+
+        <!-- Owner Name -->
+        <dt class="col-sm-3 fw-bold">
+            @Html.DisplayNameFor(model => model.OwnerName)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.OwnerName)
+        </dd>
+
+        <!-- Contact Number -->
+        <dt class="col-sm-3 fw-bold">
+            @Html.DisplayNameFor(model => model.ContactNumber)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.ContactNumber)
+        </dd>
+
+        <!-- Is Vaccinated -->
+        <dt class="col-sm-3 fw-bold">
+            @Html.DisplayNameFor(model => model.IsVaccinated)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.IsVaccinated)
+        </dd>
+
+        <!-- Registered At -->
+        <dt class="col-sm-3 fw-bold">
+            @Html.DisplayNameFor(model => model.RegisteredAt)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.RegisteredAt)
+        </dd>
+
+        <!-- Changed At -->
+        <dt class="col-sm-3 fw-bold">
+            @Html.DisplayNameFor(model => model.ChangedAt)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.ChangedAt)
+        </dd>
+    </dl>
+
+    <div class="mt-4 d-flex justify-content-start">
+        <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-primary me-2">
+            <i class="bi bi-pencil"></i> Edit
+        </a>
+        <a asp-action="Index" class="btn btn-secondary">
+            <i class="bi bi-arrow-left"></i> Back to List
+        </a>
+    </div>
+</div>
+

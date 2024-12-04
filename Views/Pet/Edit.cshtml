@@ -1,0 +1,80 @@
+﻿@model pet_register_table.Models.Pet
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="container mt-4">
+    <h4 class="mb-3">Pet</h4>
+    <hr />
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <form asp-action="Edit">
+                <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+                <input type="hidden" asp-for="Id" />
+
+                <!-- Name -->
+                <div class="mb-3">
+                    <label asp-for="Name" class="form-label"></label>
+                    <input asp-for="Name" class="form-control" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+
+                <!-- Species -->
+                <div class="mb-3">
+                    <label asp-for="Species" class="form-label"></label>
+                    <input asp-for="Species" class="form-control" />
+                    <span asp-validation-for="Species" class="text-danger"></span>
+                </div>
+
+                <!-- Breed -->
+                <div class="mb-3">
+                    <label asp-for="Breed" class="form-label"></label>
+                    <input asp-for="Breed" class="form-control" />
+                    <span asp-validation-for="Breed" class="text-danger"></span>
+                </div>
+
+                <!-- Date of Birth -->
+                <div class="mb-3">
+                    <label asp-for="DateOfBirth" class="form-label"></label>
+                    <input asp-for="DateOfBirth" class="form-control" type="date" />
+                    <span asp-validation-for="DateOfBirth" class="text-danger"></span>
+                </div>
+
+                <!-- Owner Name -->
+                <div class="mb-3">
+                    <label asp-for="OwnerName" class="form-label"></label>
+                    <input asp-for="OwnerName" class="form-control" />
+                    <span asp-validation-for="OwnerName" class="text-danger"></span>
+                </div>
+
+                <!-- Contact Number -->
+                <div class="mb-3">
+                    <label asp-for="ContactNumber" class="form-label"></label>
+                    <input asp-for="ContactNumber" class="form-control" type="tel" />
+                    <span asp-validation-for="ContactNumber" class="text-danger"></span>
+                </div>
+
+                <!-- Is Vaccinated -->
+                <div class="mb-3 form-check">
+                    <input class="form-check-input" asp-for="IsVaccinated" />
+                    <label class="form-check-label" asp-for="IsVaccinated">
+                        @Html.DisplayNameFor(model => model.IsVaccinated)
+                    </label>
+                </div>
+                
+                <!-- Save Button -->
+                <div class="d-grid">
+                    <button type="submit" class="btn btn-primary mt-3">Save</button>
+                    <a asp-action="Index" class="btn btn-secondary mt-2">Back to List</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
